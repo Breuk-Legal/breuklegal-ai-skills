@@ -2,34 +2,40 @@
 
 > **A curated collection of open-source AI skills, tools, and integrations built for modern LegalTech.**
 
-Welcome to the `breuklegal-ai-skills` repository. This project is maintained by [Breuk Legal](https://breuklegal.com) to provide robust, secure, and ready-to-use AI capabilities for corporate law automation, con foco inicial en derecho colombiano.
+Welcome to the `breuklegal-ai-skills` repository. This project is maintained by [Breuk Legal](https://breuklegal.com) to provide robust, secure, and ready-to-use AI capabilities for corporate law automation, starting with Colombian law.
 
-## 🧑‍⚖️ Para abogados que usan ChatGPT, Gemini u otras herramientas de chat
+## 🧑‍⚖️ For lawyers using ChatGPT, Gemini, or other chat tools
 
-No necesitas instalar nada técnico para aprovechar el contenido de estas skills.
+You don't need any technical setup to use the content of these skills.
 
-**ChatGPT (Custom GPTs):** crea un Custom GPT, sube el `SKILL.md` y el archivo de `references` de la skill que te interese como archivos de conocimiento (hasta 20 archivos permitidos), y pega el cuerpo del `SKILL.md` como instrucciones del GPT.
+**ChatGPT (Custom GPTs):** create a Custom GPT, upload the skill's `SKILL.md` and `references` file as knowledge files (up to 20 files allowed), and paste the body of `SKILL.md` as the GPT's instructions.
 
-**Gemini (Gems):** crea un Gem, adjunta el `SKILL.md` y el archivo de `references` como archivos de conocimiento (hasta 10 archivos, 100MB cada uno — disponible incluso en el plan gratuito), y pega las instrucciones igual que en ChatGPT.
+**Gemini (Gems):** create a Gem, attach the `SKILL.md` and `references` file as knowledge files (up to 10 files, 100MB each — available even on the free plan), and paste the instructions the same way.
 
-Encuentra los archivos de cada skill dentro de su carpeta, por ejemplo: [`breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/`](./breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/).
+Find each skill's files inside its folder, for example: [`breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/`](./breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/).
 
-## 🤖 Para agentes de código (Codex, Antigravity, Cursor, Kiro, Gemini CLI)
+## 🤖 For coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI)
 
-Cada plugin trae su propio `AGENTS.md` (estándar abierto que más de 30 herramientas leen automáticamente). Solo apunta tu agente a la carpeta del plugin que quieras usar, por ejemplo [`breuk-derecho-societario-colombia/AGENTS.md`](./breuk-derecho-societario-colombia/AGENTS.md).
+Each plugin ships its own `AGENTS.md` (the open standard that 30+ tools read automatically). Just point your agent at the plugin folder you want to use, e.g. [`breuk-derecho-societario-colombia/AGENTS.md`](./breuk-derecho-societario-colombia/AGENTS.md).
 
-También puedes instalar cualquier skill con el CLI de [skills.sh](https://www.skills.sh/):
+You can also install any skill with the [skills.sh](https://www.skills.sh/) CLI:
 
 ```
 npx skills add Breuk-Legal/breuklegal-ai-skills
 ```
 
-## 💻 Para usuarios de Claude (Cowork / Claude Code)
+## 💻 For Claude users (Cowork / Claude Code)
 
 ```
 /plugin marketplace add Breuk-Legal/breuklegal-ai-skills
 /plugin install breuk-derecho-societario-colombia@breuklegal-ai-skills
 /reload-plugins
+```
+
+Claude Code is also supported by the skills.sh CLI, so the same command as above works too:
+
+```
+npx skills add Breuk-Legal/breuklegal-ai-skills
 ```
 
 ## 🎯 What's inside?
@@ -41,19 +47,15 @@ Here you will find:
 *   **Workflow Integrations:** Connectors for CRMs, e-signature platforms, and document management systems.
 *   **Orchestration Nodes:** Skills optimized for AI agent environments and Model Context Protocol (MCP) servers.
 
-### Skills disponibles
+### Available skills
 
-| Skill | Descripción |
+| Skill | Description |
 |---|---|
-| [`breuk-derecho-societario-colombia`](./breuk-derecho-societario-colombia/) | Análisis y recomendación de figura societaria en Colombia (SAS, S.A., Ltda., sucursal), incluyendo inversión extranjera. |
-
-## 📛 Convención de nombres
-
-Todo lo publicado en este repositorio (plugins y skills) empieza con el prefijo `breuk-`.
+| [`breuk-derecho-societario-colombia`](./breuk-derecho-societario-colombia/) | Analyzes and recommends the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. |
 
 ## 🛡️ Security & DevSecOps
 
-Handling legal data requires the highest standards of security. All skills in this repository are built with a privacy-first mindset, ensuring that sensitive information is handled securely within your cloud infrastructure. Ninguna skill publicada aquí contiene datos de clientes.
+Handling legal data requires the highest standards of security. All skills in this repository are built with a privacy-first mindset, ensuring that sensitive information is handled securely within your cloud infrastructure. No skill published here contains client data.
 
 ## 🤝 Contributing
 

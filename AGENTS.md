@@ -1,15 +1,15 @@
 # AGENTS.md — breuklegal-ai-skills
 
-Este repositorio agrupa skills open source de Breuk Legal para practica juridica colombiana, instalables en Claude, y compatibles con agentes de codigo vía AGENTS.md (Codex, Antigravity, Cursor, Kiro, Gemini CLI) y con `npx skills add` (skills.sh).
+This repository groups open-source skills from Breuk Legal for Colombian legal practice, installable in Claude, and compatible with coding agents via AGENTS.md (Codex, Antigravity, Cursor, Kiro, Gemini CLI) and with `npx skills add` (skills.sh).
 
-## Skills disponibles
+## Available skills
 
-- **breuk-derecho-societario-colombia** — analisis y recomendacion de figura societaria (SAS, S.A., Ltda., sucursal), incluyendo inversion extranjera. Ver `breuk-derecho-societario-colombia/AGENTS.md` para el detalle.
+- **breuk-derecho-societario-colombia** — analyzes and recommends the right corporate vehicle (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. See `breuk-derecho-societario-colombia/AGENTS.md` for details.
 
-## Convencion de nombres
+## Naming convention
 
-Todo lo publicado en este repositorio (plugins, skills) empieza con el prefijo `breuk-`.
+Everything published in this repository (plugins, skills) starts with the `breuk-` prefix.
 
-## Contribuir
+## Contributing
 
-Antes de agregar una skill nueva: sin datos de clientes, con contenido normativo verificado en fuente primaria, y con su propio `AGENTS.md` dentro de la carpeta del plugin.
+Before adding a new skill: no client data, normative content verified against a primary source, and its own `AGENTS.md` inside the plugin folder.
