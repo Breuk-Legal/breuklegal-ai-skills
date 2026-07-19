@@ -1,16 +1,24 @@
-# derecho-societario-colombia
+# breuk-derecho-societario-colombia
 
-Plugin de Claude Cowork / Claude Code con una skill para analizar y recomendar la figura societaria adecuada en derecho colombiano.
+Plugin de Claude Cowork / Claude Code con una skill para analizar y recomendar la figura societaria adecuada en derecho colombiano. Compatible tambien con agentes de codigo que leen `AGENTS.md` (Codex, Antigravity, Cursor, Kiro, Gemini CLI) y con `npx skills add` (skills.sh).
 
-## Qué incluye
+## Que incluye
 
 **Skill:** `analisis-constitucion-societaria-colombia`
 
 Ayuda a diagnosticar el caso, comparar figuras societarias (SAS, S.A., Ltda., sucursal de sociedad extranjera), aplicar el régimen de inversión extranjera cuando corresponde, y estructurar una asesoría completa — con recordatorios explícitos de verificar cualquier cita normativa en fuente primaria antes de un documento vinculante.
 
-## Cómo instalarlo
+## Cómo usarlo
 
-En Claude Cowork o Claude Code, agrega este repositorio como fuente de marketplace o instala el plugin directamente desde esta carpeta (ver documentación de Claude sobre plugins).
+Si no usas Claude, mira el README principal del repositorio para instrucciones de ChatGPT, Gemini y agentes de código.
+
+Si usas Claude Cowork o Claude Code:
+
+```
+/plugin marketplace add Breuk-Legal/breuklegal-ai-skills
+/plugin install breuk-derecho-societario-colombia@breuklegal-ai-skills
+/reload-plugins
+```
 
 ## Alcance y limitaciones
 
