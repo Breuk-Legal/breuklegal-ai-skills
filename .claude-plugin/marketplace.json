@@ -5,8 +5,8 @@
   },
   "plugins": [
     {
-      "name": "derecho-societario-colombia",
-      "source": "./derecho-societario-colombia",
+      "name": "breuk-derecho-societario-colombia",
+      "source": "./breuk-derecho-societario-colombia",
       "description": "Analiza y recomienda la figura societaria adecuada en derecho colombiano (SAS, S.A., Ltda., sucursal de sociedad extranjera), incluyendo inversion extranjera. Open source, sin datos de clientes."
     }
   ]
