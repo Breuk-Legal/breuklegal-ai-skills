@@ -1,0 +1,7 @@
+deudor_nombre,fecha,canal,tipo_mensaje,exitoso
+Constructora Alba Ltda,2026-05-30,email,estado_cuenta,TRUE
+Constructora Alba Ltda,2026-06-15,email,estado_cuenta,TRUE
+Constructora Alba Ltda,2026-06-30,email,estado_cuenta,TRUE
+Inversiones del Valle SAS,2026-06-25,email,requerimiento_formal,TRUE
+Comercial Rio Verde SAS,2026-07-21,email,recordatorio,TRUE
+Grupo Sabana SAS,2026-07-20,whatsapp,recordatorio,TRUE

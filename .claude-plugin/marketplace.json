@@ -8,6 +8,11 @@
       "name": "breuk-derecho-societario-colombia",
       "source": "./breuk-derecho-societario-colombia",
       "description": "Analiza y recomienda la figura societaria adecuada en derecho colombiano (SAS, S.A., Ltda., sucursal de sociedad extranjera), incluyendo inversion extranjera. Open source, sin datos de clientes."
+    },
+    {
+      "name": "breuk-cobro-cartera",
+      "source": "./breuk-cobro-cartera",
+      "description": "Asistente de gestion de cobro de cartera para abogados y firmas que ofrecen este servicio a clientes empresariales en Colombia: politica por cliente, clasificacion por etapa, mensajes verificados y envio automatizado respetando la Ley 2300 de 2023, con revision humana obligatoria antes de gestion prejuridica o judicial."
     }
   ]
 }
