@@ -12,7 +12,7 @@ You don't need any technical setup to use the content of these skills.
 
 **Gemini (Gems):** create a Gem, attach the `SKILL.md` and `references` file as knowledge files (up to 10 files, 100MB each — available even on the free plan), and paste the instructions the same way.
 
-Find each skill's files inside its folder, for example: [`breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/`](./breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/).
+Find each skill's files inside its folder, for example: [`breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/`](./breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/) or [`breuk-cobro-cartera/skills/`](./breuk-cobro-cartera/skills/).
 
 ## 🤖 For coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI)
 
@@ -52,6 +52,7 @@ Here you will find:
 | Skill | Description |
 |---|---|
 | [`breuk-derecho-societario-colombia`](./breuk-derecho-societario-colombia/) | Analyzes and recommends the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. |
+| [`breuk-cobro-cartera`](./breuk-cobro-cartera/) | Accounts-receivable collection workflow for lawyers/firms managing cartera on behalf of business clients in Colombia — policy setup, invoice classification, drafting, and automated sending with a fixed human-review gate before pre-legal/judicial action. |
 
 ## 🛡️ Security & DevSecOps
 

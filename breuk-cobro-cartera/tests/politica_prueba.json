@@ -1,0 +1,13 @@
+{
+  "cliente": "Empresa de Prueba SAS",
+  "segmentacion_antiguedad_dias": [30, 60, 90],
+  "tolerancia_persuasivo_a_prejuridico": {"criterio": "repeticiones", "valor": 3},
+  "tolerancia_prejuridico_a_judicial": {"criterio": "dias_habiles", "valor": 10},
+  "contacto_escalamiento": {
+    "tipo": "abogado_designado",
+    "nombre": "Abogado(a) designado(a) por el cliente",
+    "agenda": "https://calendar.example.com/agenda-ejemplo",
+    "correo": "abogado@ejemplo.com",
+    "whatsapp": "+573000000000"
+  }
+}

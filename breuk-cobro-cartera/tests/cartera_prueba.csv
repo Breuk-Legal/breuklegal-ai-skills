@@ -1,0 +1,8 @@
+deudor_nombre,deudor_email,autoriza_email,autoriza_whatsapp,factura_numero,fecha_emision,fecha_vencimiento,monto_capital,monto_iva,abonos_parciales,saldo_reportado,acuse_recibo,constancia_entrega,reclamacion_3_dias,dias_mora
+Comercial Rio Verde SAS,contacto@rioverde.co,TRUE,TRUE,F-001,2026-06-20,2026-07-05,4000000,760000,0,4760000,TRUE,TRUE,FALSE,16
+Constructora Alba Ltda,pagos@alba.co,TRUE,FALSE,F-002,2026-05-10,2026-05-25,12000000,2280000,0,14280000,TRUE,TRUE,FALSE,57
+Distribuidora Norte SAS,cxp@dnorte.co,TRUE,TRUE,F-003,2026-06-01,2026-06-16,8000000,1520000,0,9520000,TRUE,TRUE,TRUE,35
+Suministros Pacifico SAS,finanzas@pacifico.co,TRUE,FALSE,F-004,2026-06-05,2026-06-20,6000000,1140000,2000000,7140000,TRUE,TRUE,FALSE,31
+Taller Andino Ltda,contab@andino.co,TRUE,TRUE,F-005,2026-07-10,2026-06-30,3000000,570000,0,3570000,TRUE,TRUE,FALSE,-10
+Grupo Sabana SAS,tesoreria@sabana.co,TRUE,TRUE,F-006,2026-04-01,2026-04-16,20000000,3800000,15000000,8800000,TRUE,TRUE,FALSE,96
+Inversiones del Valle SAS,legal@delvalle.co,TRUE,FALSE,F-007,2026-03-15,2026-03-30,25000000,4750000,0,29750000,TRUE,TRUE,FALSE,113
