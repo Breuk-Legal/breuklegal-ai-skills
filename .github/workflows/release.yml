@@ -1,0 +1,38 @@
+name: release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+# Serializa los cortes de versión: si entran varios merges seguidos, se
+# encolan en vez de pisarse (nunca cancelar un release a medias).
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  tag-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Cada merge a main corta versión: +patch (o promueve un rc previo) y
+      # tag-ea el commit actual. Consumido por breuklegal-ai-agent
+      # (scripts/sync-skills) como "el último release semver" a embeber.
+      - name: Tag next version
+        id: tag
+        run: |
+          bash scripts/release
+          echo "version=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        run: gh release create "${{ steps.tag.outputs.version }}" --generate-notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Crea y pushea el siguiente tag de versión (prefijo v). Lo invoca release.yml
+# en cada merge a main: por defecto +patch (o promueve un rc previo a estable).
+# Sin tags previos bootstrapea v0.1.0. Flags manuales opcionales: --minor sube
+# la versión menor; --rc produce/incrementa un sufijo -rc.N.
+#
+# Mismo script que Breuk-Legal/breuklegal-ai-agent/scripts/release: los
+# consumidores (sync-skills) resuelven "el último release semver" del mismo
+# modo en ambos repos.
+minor=false
+rc=false
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --minor) minor=true; shift 1;;
+    --rc) rc=true; shift 1;;
+    *) echo "Unknown parameter: $1"; exit 1;;
+  esac
+done
+
+git fetch --force --tags
+
+# versionsort.suffix=- ordena prereleases (-rc.N) antes que la versión final;
+# sin esto v0.1.0-rc.1 sortea después de v0.1.0 y se intenta re-crear un tag.
+latest_tag=$(git -c versionsort.suffix=- tag --list 'v*' --sort=v:refname | tail -1)
+
+if [ -z "$latest_tag" ]; then
+  if [ "$rc" = true ]; then
+    new_version="v0.1.0-rc.1"
+  else
+    new_version="v0.1.0"
+  fi
+  echo "No tags found; bootstrapping $new_version"
+else
+  echo "Latest tag: $latest_tag"
+  base=${latest_tag#v}
+  core=${base%%-*}
+  IFS='.' read -r major_n minor_n patch_n <<< "$core"
+
+  if [[ "$base" == *-rc.* ]]; then
+    if [ "$rc" = true ]; then
+      rc_n=${base##*-rc.}
+      new_version="v${core}-rc.$((rc_n + 1))"
+    else
+      # Promover el rc actual a versión final
+      new_version="v${core}"
+    fi
+  else
+    if [ "$minor" = true ]; then
+      next="${major_n}.$((minor_n + 1)).0"
+    else
+      next="${major_n}.${minor_n}.$((patch_n + 1))"
+    fi
+    if [ "$rc" = true ]; then
+      new_version="v${next}-rc.1"
+    else
+      new_version="v${next}"
+    fi
+  fi
+fi
+
+echo "New version: $new_version"
+
+git tag "$new_version"
+git push origin "$new_version"
