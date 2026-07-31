@@ -1,6 +1,6 @@
 ---
 name: cobro-ingesta-clasificacion
-description: Lee la cartera de facturas del cliente desde su Google Sheet o carpeta de Drive conectada, valida la consistencia de los datos (saldos, fechas, soporte de titulo valor), y clasifica cada factura por antiguedad y por sub-etapa exacta de cobro (preventiva, recordatorio, estado de cuenta, carta formal de cobro, prejuridico, judicial) segun la politica ya configurada y el registro real de comunicaciones enviadas. Se activa con "revisa mi cartera", "clasifica las facturas vencidas", "actualiza el estado de mora", "que facturas estan en riesgo", "cuales facturas califican para ejecutivo".
+description: Lee la cartera de facturas del cliente desde su hoja de calculo, archivo CSV/Excel o carpeta conectada, valida la consistencia de los datos (saldos, fechas, soporte de titulo valor), y clasifica cada factura por antiguedad y por sub-etapa exacta de cobro (preventiva, recordatorio, estado de cuenta, carta formal de cobro, prejuridico, judicial) segun la politica ya configurada y el registro real de comunicaciones enviadas. Se activa con "revisa mi cartera", "clasifica las facturas vencidas", "actualiza el estado de mora", "que facturas estan en riesgo", "cuales facturas califican para ejecutivo".
 ---
 
 # Ingesta, validacion y clasificacion de cartera
@@ -11,7 +11,7 @@ Antes de leer ninguna cartera, confirma que existe la politica del cliente (manu
 
 ## Paso 1 — Leer la cartera
 
-Lee el Google Sheet o archivo de facturacion conectado del cliente via el conector de Sheets/Drive. Mapea las columnas de forma flexible aceptando sinonimos razonables (ej. "saldo pendiente" = `saldo_insoluto`), pero valida internamente contra el esquema de `references/validaciones-datos.md`.
+Lee el archivo de cartera conectado del cliente — puede ser un Google Sheet, un archivo Excel/CSV en Drive o almacenamiento equivalente, u otra fuente estructurada disponible via la herramienta de archivos del agente. Mapea las columnas de forma flexible aceptando sinonimos razonables (ej. "saldo pendiente" = `saldo_insoluto`), pero valida internamente contra el esquema de `references/validaciones-datos.md`.
 
 ## Paso 2 — Validar cada fila antes de calcular nada
 

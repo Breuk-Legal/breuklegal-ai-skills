@@ -11,10 +11,10 @@ Este skill cubre dos puntos que no son configurables: la revision de la carta fo
 
 El resultado esperado de este skill es automatizar el envio de verdad, no solo producir texto para copiar y pegar — pero el mecanismo depende de `canal_envio_modo` en la politica del cliente (definido en `cobro-setup`, ver `references/canal-de-envio.md` de ese skill):
 
-- **`zapier`**: envia de verdad, llamando a la accion de escritura equivalente a "Gmail: Send Email" (u Outlook) habilitada via Zapier. Este es el modo que cumple el "resultado esperado" de automatizacion completa.
-- **`borrador_asistido`**: no intentes enviar. Crea el borrador con el conector nativo de correo (que si soporta crear borradores) y notifica al cliente que esta listo en su bandeja para que lo envie el mismo con un clic.
+- **`zapier`** (o equivalente — cualquier herramienta de envio activa): envia de verdad, llamando a la accion de escritura disponible en el agente (puede ser via Zapier, Make, n8n, un conector MCP, o una accion nativa de envio). Este es el modo que cumple el "resultado esperado" de automatizacion completa.
+- **`borrador_asistido`**: no intentes enviar. Crea el borrador con la herramienta de correo disponible (que soporte crear borradores) y notifica al cliente que esta listo en su bandeja para que lo envie el mismo con un clic.
 
-Nunca uses el conector nativo de lectura de correo para intentar enviar — ese conector no tiene accion de envio bajo ninguna circunstancia (es una restriccion de diseno de Anthropic, no una falla puntual). Antes del primer envio automatico de un cliente en modo `zapier`, confirma en `cobro-setup` (Paso 0.5 y Paso 5) que la accion de envio esta habilitada, autorizada, y que la prueba de correo fue exitosa.
+Antes de intentar enviar, verifica que la herramienta disponible tenga capacidad de escritura/envio real — no solo de lectura o borrador. Si el agente solo tiene una herramienta de lectura, usa el modo `borrador_asistido` segun la politica del cliente. Antes del primer envio automatico, confirma en `cobro-setup` (Paso 0.5 y Paso 5) que la accion de envio esta habilitada, autorizada, y que la prueba de correo fue exitosa.
 
 Cada vez que algo sale (o queda como borrador pendiente), escribe una fila en el registro de comunicaciones (`references/registro-comunicaciones.md` de `cobro-ingesta-clasificacion`) — es la fuente de verdad que ese skill usa para clasificar sub-etapas. Actualiza tambien el plan de comunicacion (`Plan de Comunicacion/`, ver `references/plan-de-comunicacion.md` de `cobro-setup`) segun la frecuencia de refresco que el cliente eligio — ese archivo es el respaldo que cualquier persona puede usar para enviar manualmente si la automatizacion falla.
 

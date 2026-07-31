@@ -1,6 +1,6 @@
 # Plan de comunicacion (respaldo ante fallas de automatizacion)
 
-Vive en `Plan de Comunicacion/` junto a la cartera del cliente. Es un documento concreto — no una descripcion de reglas — con fecha y mensaje ya redactado por deudor, para que la gestion de cobro no dependa por completo de que la tarea programada de Cowork este bien configurada o corriendo.
+Vive en `Plan de Comunicacion/` junto a la cartera del cliente. Es un documento concreto — no una descripcion de reglas — con fecha y mensaje ya redactado por deudor, para que la gestion de cobro no dependa por completo de que la tarea programada del agente este bien configurada o corriendo.
 
 ## Que contiene
 
