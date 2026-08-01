@@ -12,31 +12,39 @@ You don't need any technical setup to use the content of these skills.
 
 **Gemini (Gems):** create a Gem, attach the `SKILL.md` and `references` file as knowledge files (up to 10 files, 100MB each — available even on the free plan), and paste the instructions the same way.
 
-Find each skill's files inside its folder, for example: [`breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/`](./breuk-derecho-societario-colombia/skills/analisis-constitucion-societaria-colombia/) or [`breuk-cobro-cartera/skills/`](./breuk-cobro-cartera/skills/).
+Find each skill's files inside its folder, for example: [`colombia-derecho-societario-analisis-constitucion/skills/colombia-derecho-societario-constitucion/`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/skills/colombia-derecho-societario-constitucion/) or [`colombia-cobro-cartera-gestion-integral/skills/`](./colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral/skills/).
 
 ## 🤖 For coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI)
 
-Each plugin ships its own `AGENTS.md` (the open standard that 30+ tools read automatically). Just point your agent at the plugin folder you want to use, e.g. [`breuk-derecho-societario-colombia/AGENTS.md`](./breuk-derecho-societario-colombia/AGENTS.md).
+Each plugin ships its own `AGENTS.md` (the open standard that 30+ tools read automatically). Just point your agent at the plugin folder you want to use, e.g. [`colombia-derecho-societario-analisis-constitucion/AGENTS.md`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/AGENTS.md).
 
-You can also install any skill with the [skills.sh](https://www.skills.sh/) CLI:
+You can also install with the [skills.sh](https://www.skills.sh/) CLI — pick the scope you need:
 
 ```
-npx skills add Breuk-Legal/breuklegal-ai-skills
+# Everything in the repo (both plugins, all skills)
+npx skills add Breuk-Legal/breuklegal-ai-skills --all
+
+# A whole plugin (all of its skills) — point at the plugin folder
+npx skills add Breuk-Legal/breuklegal-ai-skills/colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral
+
+# A single skill, by its full name (searched across the repo)
+npx skills add Breuk-Legal/breuklegal-ai-skills --skill colombia-cobro-cartera-politica
+
+# Preview what's available without installing
+npx skills add Breuk-Legal/breuklegal-ai-skills --list
 ```
+
+Skill names are fully qualified (`{jurisdiction}-{legal-area}-{function}`, e.g. `colombia-cobro-cartera-politica`) because `npx skills add` installs each skill flat into your agent's skills directory with no plugin namespace — see each plugin's README for its skill list.
 
 ## 💻 For Claude users (Cowork / Claude Code)
 
 ```
 /plugin marketplace add Breuk-Legal/breuklegal-ai-skills
-/plugin install breuk-derecho-societario-colombia@breuklegal-ai-skills
+/plugin install colombia-derecho-societario-analisis-constitucion@breuklegal-ai-skills
 /reload-plugins
 ```
 
-Claude Code is also supported by the skills.sh CLI, so the same command as above works too:
-
-```
-npx skills add Breuk-Legal/breuklegal-ai-skills
-```
+Claude Code is also supported by the skills.sh CLI, so the same `npx skills add …` commands shown above (all / per-plugin / per-skill) work here too.
 
 ## 🎯 What's inside?
 
@@ -51,8 +59,8 @@ Here you will find:
 
 | Skill | Description |
 |---|---|
-| [`breuk-derecho-societario-colombia`](./breuk-derecho-societario-colombia/) | Analyzes and recommends the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. |
-| [`breuk-cobro-cartera`](./breuk-cobro-cartera/) | Accounts-receivable collection workflow for lawyers/firms managing cartera on behalf of business clients in Colombia — policy setup, invoice classification, drafting, and automated sending with a fixed human-review gate before pre-legal/judicial action. |
+| [`colombia-derecho-societario-analisis-constitucion`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/) | Analyzes and recommends the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. |
+| [`colombia-cobro-cartera-gestion-integral`](./colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral/) | Accounts-receivable collection workflow for lawyers/firms managing cartera on behalf of business clients in Colombia — policy setup, invoice classification, drafting, and automated sending with a fixed human-review gate before pre-legal/judicial action. |
 
 ## 🛡️ Security & DevSecOps
 
