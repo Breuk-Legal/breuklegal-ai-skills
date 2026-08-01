@@ -16,7 +16,7 @@ action of your agent, an MCP connector, or a Gmail "Send Email" write action
 exposed through an automation bridge (e.g. Zapier, Make, n8n; the reference
 setup was tested with Zapier's `gmail_send_email`). If your workspace uses
 Outlook/Microsoft 365 instead, enable the equivalent send action the same way.
-`cobro-setup` checks for this specifically before treating the email channel as
+`colombia-cobro-cartera-politica` checks for this specifically before treating the email channel as
 ready for automation, and sends a real test message before closing the
 configuration.
 
@@ -30,7 +30,7 @@ configuration.
 | Messaging (optional) | (fixed) | WhatsApp Business API — only needed if you want to send the early friendly reminder by WhatsApp. |
 
 Connect your spreadsheet/files storage and the send action for your email provider before
-running `cobro-setup` — or let `cobro-setup` walk you through connecting them,
+running `colombia-cobro-cartera-politica` — or let `colombia-cobro-cartera-politica` walk you through connecting them,
 since it checks and surfaces the "Connect" prompt directly in the conversation
 if something is missing. WhatsApp Business API is optional and only required
 if your collection policy uses it as a channel.

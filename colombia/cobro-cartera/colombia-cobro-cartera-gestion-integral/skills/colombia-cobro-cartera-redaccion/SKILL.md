@@ -1,5 +1,5 @@
 ---
-name: cobro-mensajes
+name: colombia-cobro-cartera-redaccion
 description: Redacta el borrador de la comunicacion de cobro correspondiente a la etapa de una factura o deudor especifico (recordatorio de vencimiento, recordatorio amistoso, estado de cuenta, carta formal de cobro, o requerimiento formal de pago), usando plantillas ya verificadas y aplicando las restricciones de la Ley 2300 de 2023 y la Circular Externa 048 de 2008. Se activa con "redacta el recordatorio para [deudor]", "prepara el estado de cuenta de [deudor]", "genera la carta formal de cobro de [deudor]", "genera el requerimiento formal de [factura]", "escribeme el mensaje de cobro para [deudor]".
 ---
 
@@ -16,11 +16,11 @@ La carta formal de cobro (1c) y el requerimiento formal de pago (2) son document
 
 ## Antes de redactar
 
-Confirma que existe politica del cliente (si no, invoca `cobro-setup`) y que la factura/deudor ya fue clasificado por `cobro-ingesta-clasificacion` en una sub-etapa especifica. Este skill **solo redacta para las etapas 0, 1 y 2**. No existe plantilla de etapa 3 (judicial): si la factura ya esta ahi, no redactes nada — remite al skill `cobro-envio`, que se encarga de la alerta de escalamiento sin generar ningun escrito.
+Confirma que existe politica del cliente (si no, invoca `colombia-cobro-cartera-politica`) y que la factura/deudor ya fue clasificado por `colombia-cobro-cartera-clasificacion` en una sub-etapa especifica. Este skill **solo redacta para las etapas 0, 1 y 2**. No existe plantilla de etapa 3 (judicial): si la factura ya esta ahi, no redactes nada — remite al skill `colombia-cobro-cartera-envio`, que se encarga de la alerta de escalamiento sin generar ningun escrito.
 
-**El requerimiento formal de pago (etapa 2) nunca se redacta de forma proactiva.** Que una factura haya cruzado el umbral hacia prejuridico no es, por si solo, motivo para generar el borrador — eso lo detecta y alerta `cobro-envio`, sin escribir nada todavia. Este skill solo redacta el requerimiento formal cuando el usuario (una persona, no una tarea programada) lo pide explicitamente para ese caso. Cuando lo pida, redacta el borrador con normalidad, pero antes de entregarlo recuerda brevemente que sigue sujeto a revision y aprobacion del contacto de escalamiento antes de poder enviarse, y que la responsabilidad de decidir enviarlo es de quien lo aprueba.
+**El requerimiento formal de pago (etapa 2) nunca se redacta de forma proactiva.** Que una factura haya cruzado el umbral hacia prejuridico no es, por si solo, motivo para generar el borrador — eso lo detecta y alerta `colombia-cobro-cartera-envio`, sin escribir nada todavia. Este skill solo redacta el requerimiento formal cuando el usuario (una persona, no una tarea programada) lo pide explicitamente para ese caso. Cuando lo pida, redacta el borrador con normalidad, pero antes de entregarlo recuerda brevemente que sigue sujeto a revision y aprobacion del contacto de escalamiento antes de poder enviarse, y que la responsabilidad de decidir enviarlo es de quien lo aprueba.
 
-La carta formal de cobro (etapa 1c) si puede redactarse cuando el caso llega a esa sub-etapa (no requiere la misma espera que el requerimiento formal), pero recuerda que `cobro-envio` exige una revision la primera vez que se usa con cada deudor antes de enviarla, aunque no sea revision de un abogado.
+La carta formal de cobro (etapa 1c) si puede redactarse cuando el caso llega a esa sub-etapa (no requiere la misma espera que el requerimiento formal), pero recuerda que `colombia-cobro-cartera-envio` exige una revision la primera vez que se usa con cada deudor antes de enviarla, aunque no sea revision de un abogado.
 
 ## Las plantillas (ver `references/plantillas.md` para el texto base)
 
@@ -36,14 +36,14 @@ La carta formal de cobro (etapa 1c) si puede redactarse cuando el caso llega a e
 
 ## Despues de redactar
 
-Todo borrador queda marcado con estado `revisado_y_aprobado: no`. La carta formal de cobro (1c) y el requerimiento formal de pago (2) quedan ademas bloqueados hasta la revision que corresponda (ver skill `cobro-envio`) — esto lo hace cumplir `cobro-envio`, no este skill. Este skill nunca envia nada por si mismo.
+Todo borrador queda marcado con estado `revisado_y_aprobado: no`. La carta formal de cobro (1c) y el requerimiento formal de pago (2) quedan ademas bloqueados hasta la revision que corresponda (ver skill `colombia-cobro-cartera-envio`) — esto lo hace cumplir `colombia-cobro-cartera-envio`, no este skill. Este skill nunca envia nada por si mismo.
 
 ## Anti-patrones
 
 - Nunca redactes una plantilla de etapa judicial — esa etapa no genera escritos en este plugin.
 - Nunca confundas la carta formal de cobro (administrativa, sin abogado) con el requerimiento formal de pago (prejuridica, con abogado) — son documentos distintos con distinto responsable.
 - Nunca redactes el requerimiento formal de forma automatica solo porque una factura cruzo el umbral de prejuridico — espera a que el usuario lo pida expresamente para ese caso.
-- Nunca inventes una cita normativa que no este en `references/marco-normativo.md` (skill `cobro-consulta-normativa`).
+- Nunca inventes una cita normativa que no este en `references/marco-normativo.md` (skill `colombia-cobro-cartera-normativa`).
 - Nunca incluyas gastos de cobranza sin la gestion real documentada que exige la Circular 048 de 2008.
 - Nunca menciones una reserva de derechos por defecto en ninguna plantilla.
 - Nunca inventes un canal o enlace de pago en el recordatorio preventivo — solo si el cliente lo definio en su politica.

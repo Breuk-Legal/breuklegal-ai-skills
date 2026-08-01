@@ -12,7 +12,7 @@ You don't need any technical setup to use the content of these skills.
 
 **Gemini (Gems):** create a Gem, attach the `SKILL.md` and `references` file as knowledge files (up to 10 files, 100MB each — available even on the free plan), and paste the instructions the same way.
 
-Find each skill's files inside its folder, for example: [`colombia-derecho-societario-analisis-constitucion/skills/analisis-constitucion-societaria-colombia/`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/skills/analisis-constitucion-societaria-colombia/) or [`colombia-cobro-cartera-gestion-integral/skills/`](./colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral/skills/).
+Find each skill's files inside its folder, for example: [`colombia-derecho-societario-analisis-constitucion/skills/colombia-derecho-societario-constitucion/`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/skills/colombia-derecho-societario-constitucion/) or [`colombia-cobro-cartera-gestion-integral/skills/`](./colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral/skills/).
 
 ## 🤖 For coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI)
 

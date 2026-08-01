@@ -4,7 +4,7 @@ A skill package for analyzing and recommending the right corporate vehicle in Co
 
 ## What's inside
 
-**Skill:** `analisis-constitucion-societaria-colombia`
+**Skill:** `colombia-derecho-societario-constitucion`
 
 Helps diagnose the case, compare corporate vehicles (SAS, S.A., Ltda., branch of a foreign company), apply the foreign investment regime when it applies, and structure a full advisory session — with explicit reminders to verify any normative citation against a primary source before a binding document.
 

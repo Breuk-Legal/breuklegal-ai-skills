@@ -4,7 +4,7 @@ Instructions for coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI and
 
 ## What this is
 
-A methodology for analyzing and recommending the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including the foreign investment regime when applicable. Detailed normative content is in `skills/analisis-constitucion-societaria-colombia/references/figuras-societarias-colombia.md`. Expected behavior is in `skills/analisis-constitucion-societaria-colombia/SKILL.md`.
+A methodology for analyzing and recommending the right corporate vehicle in Colombian law (SAS, S.A., Ltda., branch of a foreign company), including the foreign investment regime when applicable. Detailed normative content is in `skills/colombia-derecho-societario-constitucion/references/figuras-societarias-colombia.md`. Expected behavior is in `skills/colombia-derecho-societario-constitucion/SKILL.md`.
 
 ## How to behave when using this content
 

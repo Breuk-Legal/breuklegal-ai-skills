@@ -2,7 +2,7 @@
 
 Es la fuente de verdad de lo que realmente paso con cada factura/deudor — no una copia de lo que la politica hubiera indicado en teoria. Vive junto a la cartera del cliente (misma carpeta), en una pestaña o archivo separado de la cartera misma (ej. `registro-comunicaciones-[cliente]`).
 
-`cobro-envio` escribe una fila cada vez que algo sale de verdad (o queda como borrador pendiente); `cobro-ingesta-clasificacion` lo lee para clasificar.
+`colombia-cobro-cartera-envio` escribe una fila cada vez que algo sale de verdad (o queda como borrador pendiente); `colombia-cobro-cartera-clasificacion` lo lee para clasificar.
 
 ## Columnas
 

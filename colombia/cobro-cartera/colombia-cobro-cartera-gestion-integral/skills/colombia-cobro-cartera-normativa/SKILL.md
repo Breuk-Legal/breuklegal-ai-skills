@@ -1,5 +1,5 @@
 ---
-name: cobro-consulta-normativa
+name: colombia-cobro-cartera-normativa
 description: Responde preguntas informativas sobre el marco legal colombiano de cobranza (Ley 2300 de 2023, Circular Externa 048 de 2008, regimen de habeas data y reporte a centrales de riesgo, cartera publica/B2G) sin ejecutar ni bloquear ninguna accion sobre la cartera del cliente. Se activa con preguntas como "puedo reportar esta deuda a Datacredito", "cuanto puedo cobrar de intereses", "que pasa si mi deudor es una entidad publica", "cada cuanto puedo contactar a un deudor", "que dice la ley sobre cobranza".
 ---
 
@@ -19,5 +19,5 @@ Este skill solo responde preguntas. No lee cartera, no redacta comunicaciones, n
 
 - Nunca presentes esto como una opinion legal formal y cerrada — es informacion general.
 - Nunca cites un plazo o porcentaje de `conocimiento-consulta.md` marcado como "sin confirmar" como si fuera un hecho verificado — dilo explicitamente.
-- Nunca actives, actualices o bloquees nada de la cartera del cliente desde este skill — si la pregunta implica accion, remite al skill correspondiente (`cobro-ingesta-clasificacion`, `cobro-mensajes` o `cobro-envio`).
+- Nunca actives, actualices o bloquees nada de la cartera del cliente desde este skill — si la pregunta implica accion, remite al skill correspondiente (`colombia-cobro-cartera-clasificacion`, `colombia-cobro-cartera-redaccion` o `colombia-cobro-cartera-envio`).
 - Nunca uses el "Manual de Cobro de la UAEJPMP" como fuente para cartera publica en general — ver la correccion explicita en `references/conocimiento-consulta.md`.

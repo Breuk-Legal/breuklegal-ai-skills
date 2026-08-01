@@ -13,7 +13,7 @@ historial = list(csv.DictReader(open(BASE + "historial_contactos.csv")))
 abonos_sabana = list(csv.DictReader(open(BASE + "abonos_detalle_sabana.csv")))
 
 print("=" * 78)
-print("PASO 1 — cobro-ingesta-clasificacion: validaciones VAL-DATA-01 a 04")
+print("PASO 1 — colombia-cobro-cartera-clasificacion: validaciones VAL-DATA-01 a 04")
 print("=" * 78)
 
 filas_validas = []
@@ -107,7 +107,7 @@ for row in filas_validas:
     print(f"     Motivo: {motivo}")
 
 print("\n" + "=" * 78)
-print("PASO 3 — cobro-envio: motor Ley 2300 (frecuencia/horario/consentimiento) + gate")
+print("PASO 3 — colombia-cobro-cartera-envio: motor Ley 2300 (frecuencia/horario/consentimiento) + gate")
 print("=" * 78)
 
 def contacto_hoy(nombre):
@@ -142,7 +142,7 @@ print("\n--- Gate de aprobacion (etapas 3 y 4) ---")
 contacto = politica["contacto_escalamiento"]
 for r in resultados:
     if r["etapa"].startswith("3"):
-        print(f"\n{r['nombre']} / {r['factura']}: borrador de requerimiento formal generado por cobro-mensajes,")
+        print(f"\n{r['nombre']} / {r['factura']}: borrador de requerimiento formal generado por colombia-cobro-cartera-redaccion,")
         print(f"  ESTADO = bloqueado. Requiere aprobacion explicita de: {contacto['nombre']} "
               f"({contacto['correo']}) antes de poder enviarse. No se envia bajo ninguna instruccion sin esa aprobacion.")
     if r["etapa"].startswith("4"):

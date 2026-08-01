@@ -12,7 +12,7 @@ A 4-stage accounts-receivable collection workflow for Colombia (preventive, pers
 2. Never draft any judicial filing — the judicial stage only produces a contact alert, never a document.
 3. Distinguish the two stage-2/3 documents that share the word "formal": the **formal collection letter** (stage 1c, administrative, no lawyer) and the **formal payment demand** (stage 2, pre-legal, lawyer-reviewed) are different documents with different owners — never conflate them.
 4. Each client's policy and receivables data must stay isolated in that client's own connected folder — never compare or cross-reference one client's data against another's.
-5. This plugin has no hardcoded default escalation contact. Whoever installs it configures their own during the `cobro-setup` session — do not hardcode a specific person or firm as a fallback.
+5. This plugin has no hardcoded default escalation contact. Whoever installs it configures their own during the `colombia-cobro-cartera-politica` session — do not hardcode a specific person or firm as a fallback.
 6. Any generated client-facing document (the policy manual) belongs to the end client, not to whoever built or installed the plugin — do not let the installer's own branding leak into a document meant to be the client's own operating policy.
 
 ## Limits

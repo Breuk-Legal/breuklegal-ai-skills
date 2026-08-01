@@ -1,11 +1,11 @@
 # Plantillas verificadas por etapa
 
-Variables entre llaves se llenan con los datos del deudor/factura clasificados por `cobro-ingesta-clasificacion`. El modelo de etapas de este plugin, de menor a mayor formalidad:
+Variables entre llaves se llenan con los datos del deudor/factura clasificados por `colombia-cobro-cartera-clasificacion`. El modelo de etapas de este plugin, de menor a mayor formalidad:
 
 - **Etapa 0 — Cobranza preventiva** (antes de que exista mora): recordatorio de vencimiento. Sin abogado.
 - **Etapa 1 — Cobro persuasivo o administrativo** (mora temprana, sin abogado, lo maneja la empresa): sub-pasos de formalidad creciente — (1a) recordatorio amistoso, (1b) estado de cuenta, (1c) **carta formal de cobro** (el paso mas fuerte de esta etapa, ya cita mora e intereses, pero sigue sin abogado).
 - **Etapa 2 — Cobro prejuridico** (instancia legal, interviene un abogado): **requerimiento formal de pago**.
-- **Etapa 3 — Cobro judicial** (instancia legal, ultima instancia): no existe plantilla, solo alerta (ver `cobro-envio`).
+- **Etapa 3 — Cobro judicial** (instancia legal, ultima instancia): no existe plantilla, solo alerta (ver `colombia-cobro-cartera-envio`).
 
 No confundir la carta formal de cobro (etapa 1c, administrativa, sin abogado) con el requerimiento formal de pago (etapa 2, prejuridica, con abogado) — son dos documentos distintos, con distinto nivel de formalidad y distinto responsable.
 
@@ -90,7 +90,7 @@ Cordialmente,
 {empresa_cliente}
 ```
 
-Esta carta la redacta y (segun la politica) envia la empresa directamente, sin que intervenga un abogado — es distinta del requerimiento formal de pago de la etapa 2. Requiere revision la primera vez que se usa con cada deudor (ver `cobro-envio`), aunque no sea la revision de un abogado. El `plazo_carta_formal` lo define el usuario en su politica (sugerido 10-15 dias calendario); al vencer sin pago ni acuerdo, el caso pasa a cobro prejuridico.
+Esta carta la redacta y (segun la politica) envia la empresa directamente, sin que intervenga un abogado — es distinta del requerimiento formal de pago de la etapa 2. Requiere revision la primera vez que se usa con cada deudor (ver `colombia-cobro-cartera-envio`), aunque no sea la revision de un abogado. El `plazo_carta_formal` lo define el usuario en su politica (sugerido 10-15 dias calendario); al vencer sin pago ni acuerdo, el caso pasa a cobro prejuridico.
 
 ## 2. Requerimiento formal de pago (etapa prejuridica — instancia legal, con abogado)
 
@@ -117,8 +117,8 @@ Cordialmente,
 {contacto_escalamiento_nombre}
 ```
 
-Este borrador queda bloqueado hasta la aprobacion del contacto de escalamiento (abogado) configurado en la politica del cliente (ver skill `cobro-envio`). El plazo de 10 dias habiles es el valor sugerido por defecto — ajustable en la politica del cliente si asi lo definio.
+Este borrador queda bloqueado hasta la aprobacion del contacto de escalamiento (abogado) configurado en la politica del cliente (ver skill `colombia-cobro-cartera-envio`). El plazo de 10 dias habiles es el valor sugerido por defecto — ajustable en la politica del cliente si asi lo definio.
 
 ## Nota sobre la etapa judicial
 
-No existe una plantilla de etapa 3 (judicial). Cuando una factura cruza el umbral de prejuridico a judicial, el skill `cobro-envio` genera unicamente una alerta de escalamiento — nunca un escrito, demanda o comunicacion redactada por este skill.
+No existe una plantilla de etapa 3 (judicial). Cuando una factura cruza el umbral de prejuridico a judicial, el skill `colombia-cobro-cartera-envio` genera unicamente una alerta de escalamiento — nunca un escrito, demanda o comunicacion redactada por este skill.

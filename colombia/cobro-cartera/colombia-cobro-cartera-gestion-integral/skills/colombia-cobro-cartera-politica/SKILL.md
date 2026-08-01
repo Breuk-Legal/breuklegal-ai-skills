@@ -1,6 +1,6 @@
 ---
-name: cobro-setup
-description: Sesion de consultoria que configura o actualiza la politica de cobro de un cliente — explica el estandar de cada etapa y transicion (preventiva, persuasivo/administrativo con sus sub-pasos, prejuridico, judicial) y pregunta si la empresa lo adopta tal cual o necesita plazos distintos, captura el tono de comunicacion (descripcion + ejemplos), organiza la carpeta de trabajo, y deja canales, revision y automatizacion configurados. Se activa con "instalar el asistente de cobro", "configurar mis politicas de cobro", "ayudame a configurar este asistente", "cambiar mis umbrales de mora", "actualizar mi politica de cobro", "quien revisa mis requerimientos". Tambien se invoca automaticamente desde cualquier otro skill de este plugin (cobro-ingesta-clasificacion, cobro-mensajes, cobro-envio) cuando no encuentra un archivo de politica ya configurado para el cliente actual.
+name: colombia-cobro-cartera-politica
+description: Sesion de consultoria que configura o actualiza la politica de cobro de un cliente — explica el estandar de cada etapa y transicion (preventiva, persuasivo/administrativo con sus sub-pasos, prejuridico, judicial) y pregunta si la empresa lo adopta tal cual o necesita plazos distintos, captura el tono de comunicacion (descripcion + ejemplos), organiza la carpeta de trabajo, y deja canales, revision y automatizacion configurados. Se activa con "instalar el asistente de cobro", "configurar mis politicas de cobro", "ayudame a configurar este asistente", "cambiar mis umbrales de mora", "actualizar mi politica de cobro", "quien revisa mis requerimientos". Tambien se invoca automaticamente desde cualquier otro skill de este plugin (colombia-cobro-cartera-clasificacion, colombia-cobro-cartera-redaccion, colombia-cobro-cartera-envio) cuando no encuentra un archivo de politica ya configurado para el cliente actual.
 ---
 
 # Configuracion de la politica de cobro: sesion de consultoria
@@ -44,7 +44,7 @@ Propone una estructura estandar dentro de la carpeta conectada del cliente, para
 - `Politica de Cobro/` — el manual (docx + pdf) y el archivo tecnico.
 - `Cartera/` — el Excel/Sheet con las facturas.
 - `Facturas soporte/` — PDFs u otro respaldo documental de cada factura (acuses de recibo, contratos, etc.), si el cliente los maneja por separado.
-- `Registro de Comunicaciones/` — el registro real de lo que se ha enviado (lo usa `cobro-ingesta-clasificacion`, ver ese skill).
+- `Registro de Comunicaciones/` — el registro real de lo que se ha enviado (lo usa `colombia-cobro-cartera-clasificacion`, ver ese skill).
 - `Plan de Comunicacion/` — el plan concreto de que enviar y cuando, con el mensaje ya redactado por deudor (ver `references/plan-de-comunicacion.md`). Existe para que la gestion de cobro no dependa por completo de que la automatizacion del agente este bien configurada o corriendo: si algo falla, cualquier persona puede abrir este archivo y enviar manualmente lo que corresponda.
 
 Intenta crear estas subcarpetas directamente con el conector de Drive conectado. Si el conector disponible no soporta crear carpetas, no lo fuerces: dile al cliente los cinco nombres sugeridos y pidele que las cree el mismo (o dile donde prefiere ponerlas), y continua sin bloquear el resto de la configuracion. Si el cliente ya tiene su propia organizacion de carpetas, no se la impongas — pregunta donde prefiere que quede cada cosa y usa esa ubicacion en los pasos siguientes.
@@ -74,17 +74,17 @@ No avances a la siguiente transicion sin una respuesta clara de la anterior. Si 
 **Lo que ya NO se pregunta aqui, y por que:**
 
 - *El umbral de prejuridico a judicial* no es una decision de negocio del cliente — es un criterio legal. Queda en 10 dias habiles sin respuesta tras el requerimiento formal como estandar recomendado, explicado en el manual. Si el usuario quiere cambiarlo despues, puede pedirlo explicitamente.
-- *Quien revisa y lleva los casos de prejuridico/judicial* tampoco se pregunta aqui. No hay un contacto por defecto predefinido; `cobro-envio` lo pregunta y lo confirma dinamicamente la primera vez que un caso real llegue a prejuridico. Si el usuario lo pide directamente aqui, si se actualiza.
-- *Un nivel de revision fijo por adelantado* (sin_revision/por_envio/por_lote) ya no existe como pregunta — en su lugar, `cobro-envio` avisa y propone programar la siguiente tanda cada vez que un caso cruza de sub-etapa. Explicaselo al cliente en una frase: "en vez de configurar de antemano como se revisa cada envio, te voy a avisar cada vez que un caso pase a la siguiente etapa, y programamos juntos que sigue."
+- *Quien revisa y lleva los casos de prejuridico/judicial* tampoco se pregunta aqui. No hay un contacto por defecto predefinido; `colombia-cobro-cartera-envio` lo pregunta y lo confirma dinamicamente la primera vez que un caso real llegue a prejuridico. Si el usuario lo pide directamente aqui, si se actualiza.
+- *Un nivel de revision fijo por adelantado* (sin_revision/por_envio/por_lote) ya no existe como pregunta — en su lugar, `colombia-cobro-cartera-envio` avisa y propone programar la siguiente tanda cada vez que un caso cruza de sub-etapa. Explicaselo al cliente en una frase: "en vez de configurar de antemano como se revisa cada envio, te voy a avisar cada vez que un caso pase a la siguiente etapa, y programamos juntos que sigue."
 
 ## Paso 3 — Escribir la politica: manual operativo (docx + pdf) y configuracion tecnica
 
 La politica de cobro es un documento que cualquier persona del equipo del cliente pueda leer y usar, con o sin el asistente. Este paso produce dos archivos, guardados en `Politica de Cobro/` (o la ubicacion que el cliente prefirio en el Paso 0.7):
 
 1. **El manual operativo** (`Politica de Cobro - [Cliente].docx`, y su version `.pdf`): siguiendo `references/plantilla-politica.md` — proposito, marco normativo aplicable, las cuatro etapas y sus sub-pasos con los valores que la empresa eligio (y el motivo, si se desvio del estandar), canales, tono de comunicacion, como se manejan las excepciones caso por caso, y un anexo final con la configuracion en formato de tabla legible. Sin marca de "Breuk" en ninguna parte del documento — es de la empresa cliente, no de quien instalo el plugin.
-2. **El archivo de configuracion tecnica** (`politica-cobro-[cliente].json`): los valores estructurados que `cobro-ingesta-clasificacion`, `cobro-mensajes` y `cobro-envio` necesitan para operar. Nunca reemplaza al manual, es su version maquina-legible.
+2. **El archivo de configuracion tecnica** (`politica-cobro-[cliente].json`): los valores estructurados que `colombia-cobro-cartera-clasificacion`, `colombia-cobro-cartera-redaccion` y `colombia-cobro-cartera-envio` necesitan para operar. Nunca reemplaza al manual, es su version maquina-legible.
 
-Tambien crea (vacio) el archivo de registro de comunicaciones en `Registro de Comunicaciones/` (ver `references/registro-comunicaciones.md` en `cobro-ingesta-clasificacion`), listo para que `cobro-envio` lo empiece a llenar.
+Tambien crea (vacio) el archivo de registro de comunicaciones en `Registro de Comunicaciones/` (ver `references/registro-comunicaciones.md` en `colombia-cobro-cartera-clasificacion`), listo para que `colombia-cobro-cartera-envio` lo empiece a llenar.
 
 Confirma al usuario que todo quedo guardado y donde. Nunca sobrescribas una politica existente sin mostrar antes que cambia.
 
@@ -102,7 +102,7 @@ Antes de dar la configuracion por completa, confirma que el canal de envio realm
 
 - Nunca conviertas esta consultoria en un formulario ciego — siempre explica el estandar y su porque antes de preguntar si aplica o cambia.
 - Nunca inventes un umbral o un canal sin preguntarle al usuario primero — ni siquiera como valor por defecto silencioso (excepto el umbral judicial, que es un estandar fijo y explicado, no una pregunta).
-- Nunca preguntes en esta consultoria quien revisa los casos de prejuridico/judicial — eso se resuelve dinamicamente en `cobro-envio`.
+- Nunca preguntes en esta consultoria quien revisa los casos de prejuridico/judicial — eso se resuelve dinamicamente en `colombia-cobro-cartera-envio`.
 - Nunca agregues algo de un ejemplo de comunicacion subido por el cliente a la politica sin proponerselo y confirmar primero.
 - Nunca sobrescribas una politica existente sin mostrar antes qué cambia.
 - Nunca generes un poder especial de cobro ni ofrezcas hacerlo — esa gestion la hace Wanda caso por caso, fuera de este plugin.

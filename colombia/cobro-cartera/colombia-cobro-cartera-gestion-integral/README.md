@@ -45,7 +45,7 @@ Or with the skills.sh CLI:
 npx skills add Breuk-Legal/breuklegal-ai-skills
 ```
 
-Once installed, tell Claude something like *"help me set up the collection assistant"* — the plugin recognizes that phrase and starts the guided policy-setup session (`cobro-setup`) on its own.
+Once installed, tell Claude something like *"help me set up the collection assistant"* — the plugin recognizes that phrase and starts the guided policy-setup session (`colombia-cobro-cartera-politica`) on its own.
 
 **Important:** use this in an agent environment that can actually take actions (connectors / MCP), not a plain text chat — the spreadsheet, email, and send/automation tools and scheduled-task automation only work where the agent can execute them. In Claude that means Cowork or Claude Code.
 
@@ -57,15 +57,15 @@ See `CONNECTORS.md`. In short: you need Google Sheets/Drive connected (where the
 
 | Skill | What it does |
 |---|---|
-| `cobro-setup` | Consulting session: builds or updates the client's collection policy, communication tone, and working folder. |
-| `cobro-ingesta-clasificacion` | Reads and validates the receivables, cross-checks the real communications log, and classifies each invoice into its exact stage. |
-| `cobro-mensajes` | Drafts each stage's message (reminder, account statement, formal collection letter, formal payment demand). |
-| `cobro-envio` | Sends routine communications, flags every stage transition, and enforces the human-review gate before pre-legal/judicial. |
-| `cobro-consulta-normativa` | Answers informational questions about Colombian collection law. |
+| `colombia-cobro-cartera-politica` | Consulting session: builds or updates the client's collection policy, communication tone, and working folder. |
+| `colombia-cobro-cartera-clasificacion` | Reads and validates the receivables, cross-checks the real communications log, and classifies each invoice into its exact stage. |
+| `colombia-cobro-cartera-redaccion` | Drafts each stage's message (reminder, account statement, formal collection letter, formal payment demand). |
+| `colombia-cobro-cartera-envio` | Sends routine communications, flags every stage transition, and enforces the human-review gate before pre-legal/judicial. |
+| `colombia-cobro-cartera-normativa` | Answers informational questions about Colombian collection law. |
 
 ## Escalation contact
 
-This plugin has no hardcoded default escalation contact. During setup, `cobro-setup` asks who should review pre-legal/judicial cases for each client — the lawyer or firm installing the plugin, the client's in-house counsel, or another external advisor the client designates.
+This plugin has no hardcoded default escalation contact. During setup, `colombia-cobro-cartera-politica` asks who should review pre-legal/judicial cases for each client — the lawyer or firm installing the plugin, the client's in-house counsel, or another external advisor the client designates.
 
 ## Scope and limitations
 

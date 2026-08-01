@@ -1,6 +1,6 @@
 # Referencia — Figuras Societarias en Colombia
 
-Contenido normativo de apoyo para la skill `analisis-constitucion-societaria-colombia`. Validado contra fuentes primarias en julio de 2026 — revisar vigencia antes de citar en un documento vinculante.
+Contenido normativo de apoyo para la skill `colombia-derecho-societario-constitucion`. Validado contra fuentes primarias en julio de 2026 — revisar vigencia antes de citar en un documento vinculante.
 
 ## SAS (Sociedad por Acciones Simplificada)
 

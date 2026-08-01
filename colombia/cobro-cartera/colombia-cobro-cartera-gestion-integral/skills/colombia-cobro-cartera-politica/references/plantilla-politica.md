@@ -14,7 +14,7 @@ Documento redactado con la skill `docx`, pensado para que lo lea una persona del
 6. **Canales y tono de comunicacion** — los canales habilitados, y una descripcion del tono/estilo que la empresa definio (y si aporto ejemplos propios, una mencion de que se uso como referencia).
 7. **Quien interviene en prejuridico y judicial** — explica que, apenas un caso real llegue a esa etapa, el asistente pausa y pregunta (o confirma) quien debe revisar y aprobar esa comunicacion: el abogado o firma que instalo este plugin, un abogado interno de la empresa, u otro asesor externo que el cliente prefiera designar en ese momento. No hay un contacto por defecto predefinido en esta skill.
 8. **Excepciones caso por caso** — cualquier caso individual puede manejarse distinto si el usuario lo pide expresamente; queda registrado junto a ese deudor especifico, sin cambiar el estandar general.
-9. **Marco normativo aplicable** — mencion breve de la Ley 2300 de 2023 y la Circular Externa 048 de 2008, sin el detalle tecnico que ya vive en `cobro-consulta-normativa`.
+9. **Marco normativo aplicable** — mencion breve de la Ley 2300 de 2023 y la Circular Externa 048 de 2008, sin el detalle tecnico que ya vive en `colombia-cobro-cartera-normativa`.
 10. **Organizacion de la carpeta de trabajo** — donde vive cada cosa (politica, cartera, facturas soporte, registro de comunicaciones).
 11. **Anexo — configuracion vigente** — tabla legible con los mismos valores del archivo tecnico (seccion 2).
 
@@ -22,7 +22,7 @@ Documento redactado con la skill `docx`, pensado para que lo lea una persona del
 
 ## 2. El archivo de configuracion tecnica (`politica-cobro-[cliente].json`)
 
-Version maquina-legible que `cobro-ingesta-clasificacion`, `cobro-mensajes` y `cobro-envio` leen para operar. Valores de ejemplo del caso piloto (I.M.C Ingenieria y Soluciones S.A.S.) — no copiar literalmente.
+Version maquina-legible que `colombia-cobro-cartera-clasificacion`, `colombia-cobro-cartera-redaccion` y `colombia-cobro-cartera-envio` leen para operar. Valores de ejemplo del caso piloto (I.M.C Ingenieria y Soluciones S.A.S.) — no copiar literalmente.
 
 ```json
 {
@@ -76,9 +76,9 @@ Version maquina-legible que `cobro-ingesta-clasificacion`, `cobro-mensajes` y `c
 - `transiciones.*`: cada una lleva un `"origen"` que es `"estandar"` si el cliente adopto la recomendacion tal cual, o `"ajustado_por_cliente"` si pidio un valor distinto (guarda el motivo en el manual, no en este archivo tecnico).
 - `transiciones.prejuridico_a_judicial`: **no se pregunta** en la consultoria. Queda siempre en 10 dias habiles con `"origen": "estandar_fijo"`, salvo que el cliente pida explicitamente cambiarlo.
 - `tono_comunicacion`: si el cliente describio su tono y/o subio ejemplos, resume aqui lo esencial (no el texto completo de los ejemplos) — el detalle vive en el manual.
-- `contacto_escalamiento`: queda vacio (`"definido": false`) hasta que un caso real cruce a prejuridico por primera vez — lo llena `cobro-envio` en ese momento.
+- `contacto_escalamiento`: queda vacio (`"definido": false`) hasta que un caso real cruce a prejuridico por primera vez — lo llena `colombia-cobro-cartera-envio` en ese momento.
 - `carpetas`: rutas relativas dentro de la carpeta conectada del cliente; si el cliente prefirio otra organizacion, refleja la que realmente se uso.
 - `plan_comunicacion.frecuencia_refresco`: `al_completar_etapa` | `semanal` | `mensual` — ver `references/plan-de-comunicacion.md` para que es este archivo y como se mantiene.
 - `tarea_programada.modo_aprobacion_recomendado`: sugerido `"aprobar_manualmente"` (la opcion del candado en el menu de modo de la tarea) para la primera corrida de prueba con datos reales de cada cliente, asi la tarea pide aprobar cada accion antes de ejecutarla — ajustable despues a `"aprobar_automaticamente"` u `"omitir_aprobaciones"` segun preferencia del cliente.
-- `excepciones_registradas`: lista donde `cobro-envio` anota cada vez que un caso especifico se maneja distinto al estandar — cada entrada incluye el deudor/factura, la desviacion, y la razon.
+- `excepciones_registradas`: lista donde `colombia-cobro-cartera-envio` anota cada vez que un caso especifico se maneja distinto al estandar — cada entrada incluye el deudor/factura, la desviacion, y la razon.
 - Este archivo (y su version docx/pdf) vive siempre junto a la cartera del cliente (misma carpeta de Drive), nunca en un repositorio centralizado de quien instala el plugin.

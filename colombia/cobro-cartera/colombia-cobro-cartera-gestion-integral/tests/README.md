@@ -1,7 +1,7 @@
 # Prueba sintetica de regresion
 
 `simular_plugin.py` implementa en Python las reglas deterministas descritas en
-`skills/cobro-ingesta-clasificacion`, `skills/cobro-envio` y sus `references/`
+`skills/colombia-cobro-cartera-clasificacion`, `skills/colombia-cobro-cartera-envio` y sus `references/`
 (validaciones VAL-DATA-01 a 04, motor Ley 2300, clasificacion por etapa y gate
 de aprobacion) y las corre contra `cartera_prueba.csv`, `historial_contactos.csv`,
 `abonos_detalle_sabana.csv` y `politica_prueba.json` — una cartera sintetica con

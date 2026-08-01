@@ -1,5 +1,5 @@
 ---
-name: analisis-constitucion-societaria-colombia
+name: colombia-derecho-societario-constitucion
 description: >
   Analiza y recomienda la figura societaria adecuada en derecho colombiano
   (SAS, S.A., Ltda., sucursal de sociedad extranjera) para casos de
