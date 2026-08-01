@@ -17,7 +17,7 @@ Si el agente no tiene una accion de envio nativa, plataformas de automatizacion 
 
 ## Modos registrados en la politica del cliente
 
-- `zapier` (o equivalente): el agente envia de verdad usando la accion de escritura disponible.
+- `automatico`: el agente envia de verdad usando la accion de escritura disponible (accion nativa, conector MCP, o puente de automatizacion).
 - `borrador_asistido`: el agente crea el borrador y notifica al cliente que esta listo para enviarlo con un clic.
 
 `cobro-envio` lee `canal_envio_modo` de la politica y actua en consecuencia.
@@ -28,4 +28,4 @@ Si el cliente prefiere no configurar una plataforma de automatizacion adicional,
 
 ## Regla para el resto del plugin
 
-`cobro-envio` debe leer `canal_envio_modo` de la politica del cliente y comportarse en consecuencia: si es `zapier` (o equivalente), ejecuta el envio real via la accion de escritura habilitada; si es `borrador_asistido`, crea el borrador y notifica al cliente que esta listo para que el lo envie.
+`cobro-envio` debe leer `canal_envio_modo` de la politica del cliente y comportarse en consecuencia: si es `automatico`, ejecuta el envio real via la accion de escritura habilitada; si es `borrador_asistido`, crea el borrador y notifica al cliente que esta listo para que el lo envie.

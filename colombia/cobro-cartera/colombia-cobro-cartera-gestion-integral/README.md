@@ -1,6 +1,8 @@
-# breuk-cobro-cartera
+# colombia-cobro-cartera-gestion-integral
 
-Claude Cowork / Claude Code plugin that helps a lawyer or law firm run accounts-receivable collection (*cobro de cartera*) as a service for their business clients in Colombia: a consulting-style session builds each client's own collection policy, classifies invoices by stage, drafts communications from verified templates, and automates sending while respecting Colombian consumer-protection collection law (Ley 2300 de 2023).
+A skill package that helps a lawyer or law firm run accounts-receivable collection (*cobro de cartera*) as a service for their business clients in Colombia: a consulting-style session builds each client's own collection policy, classifies invoices by stage, drafts communications from verified templates, and automates sending while respecting Colombian consumer-protection collection law (Ley 2300 de 2023).
+
+It runs in any AI agent environment that supports action tools (connectors / MCP) — spreadsheet, email, and automation — for example Claude Cowork/Code, or coding agents that read `AGENTS.md`. It is not tied to a single platform or automation vendor.
 
 **Who this is for:** this plugin's primary user is a lawyer or firm that offers collection management to business clients — not a general-purpose skill for any legal practice area. If that's not your practice model, it likely won't be useful to you as-is.
 
@@ -14,7 +16,7 @@ Claude Cowork / Claude Code plugin that helps a lawyer or law firm run accounts-
 ## What it does, in short
 
 1. **Builds the client's policy in a consulting session** (once, or whenever it needs adjusting): the assistant explains the recommended standard for each stage transition and asks whether the client adopts it as-is or needs something different, captures the client's communication tone (description or real examples), and organizes the working folder.
-2. **Reads the client's receivables** from their own Google Sheet or Drive, cross-checks them against the real log of what's already been sent, and classifies each invoice into its exact sub-stage.
+2. **Reads the client's receivables** from their own spreadsheet (Google Sheets, an Excel/CSV file in Drive, or equivalent storage), cross-checks them against the real log of what's already been sent, and classifies each invoice into its exact sub-stage.
 3. **Drafts the message for each stage**, with the tone and legal grounding that stage requires — never threatening, never inventing figures.
 4. **Sends routine communications automatically and flags every transition**: when a case moves to the next stage, it pauses and proposes scheduling the next batch together — instead of requiring a review mode configured upfront.
 
@@ -33,7 +35,7 @@ If you use Claude Cowork or Claude Code:
 
 ```
 /plugin marketplace add Breuk-Legal/breuklegal-ai-skills
-/plugin install breuk-cobro-cartera@breuklegal-ai-skills
+/plugin install colombia-cobro-cartera-gestion-integral@breuklegal-ai-skills
 /reload-plugins
 ```
 
@@ -45,7 +47,7 @@ npx skills add Breuk-Legal/breuklegal-ai-skills
 
 Once installed, tell Claude something like *"help me set up the collection assistant"* — the plugin recognizes that phrase and starts the guided policy-setup session (`cobro-setup`) on its own.
 
-**Important:** use this inside **Cowork**, not a plain chat — connectors (Sheets/Drive, email, Zapier) and scheduled-task automation don't work the same way outside of it.
+**Important:** use this in an agent environment that can actually take actions (connectors / MCP), not a plain text chat — the spreadsheet, email, and send/automation tools and scheduled-task automation only work where the agent can execute them. In Claude that means Cowork or Claude Code.
 
 ## Connectors needed
 

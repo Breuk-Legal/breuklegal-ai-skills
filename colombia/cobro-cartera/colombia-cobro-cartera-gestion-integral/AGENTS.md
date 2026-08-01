@@ -1,4 +1,4 @@
-# AGENTS.md — breuk-cobro-cartera
+# AGENTS.md — colombia-cobro-cartera-gestion-integral
 
 Instructions for coding agents (Codex, Antigravity, Cursor, Kiro, Gemini CLI and compatible tools) working with this skill.
 

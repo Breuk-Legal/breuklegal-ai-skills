@@ -5,7 +5,7 @@ description: Sesion de consultoria que configura o actualiza la politica de cobr
 
 # Configuracion de la politica de cobro: sesion de consultoria
 
-Este skill es la puerta de entrada del plugin. No es un formulario — es una sesion breve de asesoria: el agente explica el estandar de cada etapa y pregunta si aplica tal cual o si la empresa necesita algo distinto, en vez de simplemente recolectar valores. Es lo primero que corre con un cliente nuevo, y a lo que cualquier otro skill de `breuk-cobro-cartera` redirige si no encuentra politica configurada.
+Este skill es la puerta de entrada del plugin. No es un formulario — es una sesion breve de asesoria: el agente explica el estandar de cada etapa y pregunta si aplica tal cual o si la empresa necesita algo distinto, en vez de simplemente recolectar valores. Es lo primero que corre con un cliente nuevo, y a lo que cualquier otro skill de este plugin redirige si no encuentra politica configurada.
 
 Recomienda al usuario, si no lo ha hecho ya, usar este asistente en un entorno que soporte herramientas de accion (conectores de hojas de calculo, correo y automatizacion), no en un chat de solo texto. La mayoria de las plataformas de IA con MCP, plugins o conectores nativos cumplen este requisito. Menciona esto una vez, sin insistir, en el Paso 0.
 

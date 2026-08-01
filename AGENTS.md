@@ -4,12 +4,12 @@ This repository groups open-source skills from Breuk Legal for Colombian legal p
 
 ## Available skills
 
-- **breuk-derecho-societario-colombia** — analyzes and recommends the right corporate vehicle (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. See `breuk-derecho-societario-colombia/AGENTS.md` for details.
-- **breuk-cobro-cartera** — accounts-receivable collection workflow for lawyers/firms managing cartera on behalf of business clients in Colombia (4-stage model, policy setup, classification, drafting, automated sending with a fixed human-review gate before pre-legal/judicial). See `breuk-cobro-cartera/AGENTS.md` for details.
+- **colombia-derecho-societario-analisis-constitucion** — analyzes and recommends the right corporate vehicle (SAS, S.A., Ltda., branch of a foreign company), including foreign investment. See `colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/AGENTS.md` for details.
+- **colombia-cobro-cartera-gestion-integral** — accounts-receivable collection workflow for lawyers/firms managing cartera on behalf of business clients in Colombia (4-stage model, policy setup, classification, drafting, automated sending with a fixed human-review gate before pre-legal/judicial). See `colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral/AGENTS.md` for details.
 
 ## Naming convention
 
-Everything published in this repository (plugins, skills) starts with the `breuk-` prefix.
+Plugins are named `{jurisdiction}-{legal-area}-{skill-type}` (e.g. `colombia-cobro-cartera-gestion-integral`) and live under `colombia/{legal-area}/`. Names are platform- and vendor-neutral: no product or brand prefix.
 
 ## Contributing
 

@@ -36,7 +36,7 @@ Version maquina-legible que `cobro-ingesta-clasificacion`, `cobro-mensajes` y `c
     "plazo_carta_formal_dias": { "valor": 12, "origen": "estandar" },
     "prejuridico_a_judicial": { "criterio": "dias_habiles", "valor": 10, "origen": "estandar_fijo" }
   },
-  "canal_envio_modo": "zapier",
+  "canal_envio_modo": "automatico",
   "canales_habilitados": ["gmail"],
   "combinacion_por_etapa": {
     "recordatorio_preventivo": "gmail",

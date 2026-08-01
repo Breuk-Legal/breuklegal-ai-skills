@@ -11,7 +11,7 @@ Este skill cubre dos puntos que no son configurables: la revision de la carta fo
 
 El resultado esperado de este skill es automatizar el envio de verdad, no solo producir texto para copiar y pegar — pero el mecanismo depende de `canal_envio_modo` en la politica del cliente (definido en `cobro-setup`, ver `references/canal-de-envio.md` de ese skill):
 
-- **`zapier`** (o equivalente — cualquier herramienta de envio activa): envia de verdad, llamando a la accion de escritura disponible en el agente (puede ser via Zapier, Make, n8n, un conector MCP, o una accion nativa de envio). Este es el modo que cumple el "resultado esperado" de automatizacion completa.
+- **`automatico`** (cualquier herramienta de envio activa): envia de verdad, llamando a la accion de escritura disponible en el agente (puede ser via una accion nativa de envio, un conector MCP, o una plataforma de automatizacion como Zapier, Make o n8n). Este es el modo que cumple el "resultado esperado" de automatizacion completa.
 - **`borrador_asistido`**: no intentes enviar. Crea el borrador con la herramienta de correo disponible (que soporte crear borradores) y notifica al cliente que esta listo en su bandeja para que lo envie el mismo con un clic.
 
 Antes de intentar enviar, verifica que la herramienta disponible tenga capacidad de escritura/envio real — no solo de lectura o borrador. Si el agente solo tiene una herramienta de lectura, usa el modo `borrador_asistido` segun la politica del cliente. Antes del primer envio automatico, confirma en `cobro-setup` (Paso 0.5 y Paso 5) que la accion de envio esta habilitada, autorizada, y que la prueba de correo fue exitosa.

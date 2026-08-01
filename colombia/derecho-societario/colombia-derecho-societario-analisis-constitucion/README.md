@@ -1,6 +1,6 @@
-# breuk-derecho-societario-colombia
+# colombia-derecho-societario-analisis-constitucion
 
-Claude Cowork / Claude Code plugin with a skill for analyzing and recommending the right corporate vehicle in Colombian law. Also compatible with coding agents that read `AGENTS.md` (Codex, Antigravity, Cursor, Kiro, Gemini CLI) and with `npx skills add` (skills.sh).
+A skill package for analyzing and recommending the right corporate vehicle in Colombian law. It runs in any AI agent environment — Claude Cowork/Code, coding agents that read `AGENTS.md` (Codex, Antigravity, Cursor, Kiro, Gemini CLI), and `npx skills add` (skills.sh). It is not tied to a single platform.
 
 ## What's inside
 
@@ -16,7 +16,7 @@ If you use Claude Cowork or Claude Code:
 
 ```
 /plugin marketplace add Breuk-Legal/breuklegal-ai-skills
-/plugin install breuk-derecho-societario-colombia@breuklegal-ai-skills
+/plugin install colombia-derecho-societario-analisis-constitucion@breuklegal-ai-skills
 /reload-plugins
 ```
 
