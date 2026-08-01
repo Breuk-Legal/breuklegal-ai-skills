@@ -18,11 +18,23 @@ Find each skill's files inside its folder, for example: [`colombia-derecho-socie
 
 Each plugin ships its own `AGENTS.md` (the open standard that 30+ tools read automatically). Just point your agent at the plugin folder you want to use, e.g. [`colombia-derecho-societario-analisis-constitucion/AGENTS.md`](./colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion/AGENTS.md).
 
-You can also install any skill with the [skills.sh](https://www.skills.sh/) CLI:
+You can also install with the [skills.sh](https://www.skills.sh/) CLI — pick the scope you need:
 
 ```
-npx skills add Breuk-Legal/breuklegal-ai-skills
+# Everything in the repo (both plugins, all skills)
+npx skills add Breuk-Legal/breuklegal-ai-skills --all
+
+# A whole plugin (all of its skills) — point at the plugin folder
+npx skills add Breuk-Legal/breuklegal-ai-skills/colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral
+
+# A single skill, by its full name (searched across the repo)
+npx skills add Breuk-Legal/breuklegal-ai-skills --skill colombia-cobro-cartera-politica
+
+# Preview what's available without installing
+npx skills add Breuk-Legal/breuklegal-ai-skills --list
 ```
+
+Skill names are fully qualified (`{jurisdiction}-{legal-area}-{function}`, e.g. `colombia-cobro-cartera-politica`) because `npx skills add` installs each skill flat into your agent's skills directory with no plugin namespace — see each plugin's README for its skill list.
 
 ## 💻 For Claude users (Cowork / Claude Code)
 
@@ -32,11 +44,7 @@ npx skills add Breuk-Legal/breuklegal-ai-skills
 /reload-plugins
 ```
 
-Claude Code is also supported by the skills.sh CLI, so the same command as above works too:
-
-```
-npx skills add Breuk-Legal/breuklegal-ai-skills
-```
+Claude Code is also supported by the skills.sh CLI, so the same `npx skills add …` commands shown above (all / per-plugin / per-skill) work here too.
 
 ## 🎯 What's inside?
 

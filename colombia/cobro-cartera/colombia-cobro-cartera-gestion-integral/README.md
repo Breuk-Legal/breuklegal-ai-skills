@@ -42,8 +42,17 @@ If you use Claude Cowork or Claude Code:
 Or with the skills.sh CLI:
 
 ```
-npx skills add Breuk-Legal/breuklegal-ai-skills
+# This whole plugin (all 5 cobro skills)
+npx skills add Breuk-Legal/breuklegal-ai-skills/colombia/cobro-cartera/colombia-cobro-cartera-gestion-integral
+
+# A single skill by its full name — e.g. only the policy-setup session
+npx skills add Breuk-Legal/breuklegal-ai-skills --skill colombia-cobro-cartera-politica
+
+# Everything in the repo (both plugins)
+npx skills add Breuk-Legal/breuklegal-ai-skills --all
 ```
+
+Pass any of this plugin's skill names to `--skill` to install it on its own: `colombia-cobro-cartera-politica`, `colombia-cobro-cartera-clasificacion`, `colombia-cobro-cartera-redaccion`, `colombia-cobro-cartera-envio`, `colombia-cobro-cartera-normativa`.
 
 Once installed, tell Claude something like *"help me set up the collection assistant"* — the plugin recognizes that phrase and starts the guided policy-setup session (`colombia-cobro-cartera-politica`) on its own.
 

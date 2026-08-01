@@ -23,7 +23,14 @@ If you use Claude Cowork or Claude Code:
 Or with the skills.sh CLI:
 
 ```
-npx skills add Breuk-Legal/breuklegal-ai-skills
+# This plugin (its single skill, colombia-derecho-societario-constitucion)
+npx skills add Breuk-Legal/breuklegal-ai-skills/colombia/derecho-societario/colombia-derecho-societario-analisis-constitucion
+
+# The same skill by its full name
+npx skills add Breuk-Legal/breuklegal-ai-skills --skill colombia-derecho-societario-constitucion
+
+# Everything in the repo (both plugins)
+npx skills add Breuk-Legal/breuklegal-ai-skills --all
 ```
 
 ## Scope and limitations
