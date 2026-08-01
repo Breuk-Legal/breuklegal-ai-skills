@@ -1,6 +1,22 @@
-# Breuk Legal AI Skills ⚖️ 🤖
+<div align="center">
 
-> **A curated collection of open-source AI skills, tools, and integrations built for modern LegalTech.**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/breuk-logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/breuk-logo-light.png">
+  <img src="assets/breuk-logo-light.png" alt="Breuk — Corporate Lawyers" width="100%">
+</picture>
+
+# Breuk Legal AI Skills
+
+**Open-source AI skills, tools and integrations for modern LegalTech, by [Breuk Legal](https://breuklegal.com).**
+
+[![Install](assets/badge-install.svg)](https://www.skills.sh/)
+[![Agents](assets/badge-agents.svg)](#-for-coding-agents-codex-antigravity-cursor-kiro-gemini-cli)
+[![License](assets/badge-license.svg)](LICENSE)
+
+</div>
+
+---
 
 Welcome to the `breuklegal-ai-skills` repository. This project is maintained by [Breuk Legal](https://breuklegal.com) to provide robust, secure, and ready-to-use AI capabilities for corporate law automation, starting with Colombian law.
 
