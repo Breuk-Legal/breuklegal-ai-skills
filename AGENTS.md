@@ -16,3 +16,17 @@ Skills follow the same rule one level down, `{jurisdiction}-{legal-area}-{functi
 ## Contributing
 
 Before adding a new skill: no client data, normative content verified against a primary source, and its own `AGENTS.md` inside the plugin folder.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues in `Breuk-Legal/breuklegal-ai-agent-issues`. See [docs/agents/issue-tracker.md](docs/agents/issue-tracker.md).
+
+### Triage labels
+
+The five default labels. See [docs/agents/triage-labels.md](docs/agents/triage-labels.md).
+
+### Domain docs
+
+Single-context. See [docs/agents/domain.md](docs/agents/domain.md).
