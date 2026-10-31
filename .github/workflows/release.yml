@@ -20,9 +20,10 @@ jobs:
     # En una máquina de GitHub y no en la propia: este repo es público y la
     # máquina propia no toma sus trabajos (el corte del 2026-10-31 quedó en
     # cola sin arrancar). Abrirla a repos públicos la expondría a código de
-    # cualquiera; para un repo público las máquinas de GitHub son gratis. El tag de acá es lo
-    # que breuklegal-ai-agent embebe con scripts/sync-skills: un corte que no
-    # ocurre deja al agente publicando skills viejos sin decirlo.
+    # cualquiera; para un repo público las máquinas de GitHub son gratis.
+    # El tag de acá es lo que breuklegal-ai-agent embebe con
+    # scripts/sync-skills: un corte que no ocurre deja al agente publicando
+    # skills viejos sin decirlo.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
