@@ -17,13 +17,14 @@ permissions:
 
 jobs:
   tag-and-release:
-    # En la máquina propia y no en un runner de GitHub: los que se facturan no
-    # arrancan desde el 2026-08-09. Este workflow todavía no se topó con eso
-    # porque no hubo un merge a main desde julio, pero el próximo corte de
-    # versión no arrancaría — y no es un detalle de este repo: el tag de acá es
-    # lo que breuklegal-ai-agent embebe con scripts/sync-skills, así que un
-    # corte que no ocurre deja al agente publicando skills viejos sin decirlo.
-    runs-on: [self-hosted, Linux, X64]
+    # En una máquina de GitHub y no en la propia: este repo es público y la
+    # máquina propia no toma sus trabajos (el corte del 2026-10-31 quedó en
+    # cola sin arrancar). Abrirla a repos públicos la expondría a código de
+    # cualquiera; para un repo público las máquinas de GitHub son gratis.
+    # El tag de acá es lo que breuklegal-ai-agent embebe con
+    # scripts/sync-skills: un corte que no ocurre deja al agente publicando
+    # skills viejos sin decirlo.
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
